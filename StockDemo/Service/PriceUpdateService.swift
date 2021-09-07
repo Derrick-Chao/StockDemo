@@ -78,31 +78,42 @@ class PriceUpdateService {
         let closingPrice = referencePrices[index]
         guard let closingPriceValue = Double(closingPrice) else { return ("", "", "", "", .white) }
         
-        let randomRate = Int.random(in: -10...10)
         var newPriceValue = 0.0
         var changePriceValue = 0.0
         if closingPriceValue < 10.0 {
             
+            let range = Int((closingPriceValue / 10.0) / 0.01)
+            let randomRate = Int.random(in: -range...range)
             changePriceValue = (0.01 * Double(randomRate))
             newPriceValue = closingPriceValue + changePriceValue
         } else if closingPriceValue >= 10.0 && closingPriceValue < 50.0 {
             
+            let range = Int((closingPriceValue / 10.0) / 0.05)
+            let randomRate = Int.random(in: -range...range)
             changePriceValue = (0.05 * Double(randomRate))
             newPriceValue = closingPriceValue + changePriceValue
         } else if closingPriceValue >= 50.0 && closingPriceValue < 100 {
             
+            let range = Int((closingPriceValue / 10.0) / 0.1)
+            let randomRate = Int.random(in: -range...range)
             changePriceValue = (0.1 * Double(randomRate))
             newPriceValue = closingPriceValue + changePriceValue
         } else if closingPriceValue >= 100.0 && closingPriceValue < 500.0 {
             
+            let range = Int((closingPriceValue / 10.0) / 0.5)
+            let randomRate = Int.random(in: -range...range)
             changePriceValue = (0.5 * Double(randomRate))
             newPriceValue = closingPriceValue + changePriceValue
         } else if closingPriceValue >= 500.0 && closingPriceValue < 1000.0 {
             
+            let range = Int((closingPriceValue / 10.0) / 1.0)
+            let randomRate = Int.random(in: -range...range)
             changePriceValue = (1.0 * Double(randomRate))
             newPriceValue = closingPriceValue + changePriceValue
         } else { // >= 1000.0
             
+            let range = Int((closingPriceValue / 10.0) / 5.0)
+            let randomRate = Int.random(in: -range...range)
             changePriceValue = (5.0 * Double(randomRate))
             newPriceValue = closingPriceValue + changePriceValue
         }
