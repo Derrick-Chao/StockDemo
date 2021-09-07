@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43C476A826E6373800B35DB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476A726E6373800B35DB4 /* AppDelegate.swift */; };
+		43C476AA26E6373800B35DB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476A926E6373800B35DB4 /* SceneDelegate.swift */; };
+		43C476AF26E6373800B35DB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C476AD26E6373800B35DB4 /* Main.storyboard */; };
+		43C476B126E6373800B35DB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C476B026E6373800B35DB4 /* Assets.xcassets */; };
+		43C476B426E6373800B35DB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C476B226E6373800B35DB4 /* LaunchScreen.storyboard */; };
+		43C476BE26E63BE700B35DB4 /* StockMarketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476BD26E63BE700B35DB4 /* StockMarketListViewController.swift */; };
+		43C476C226E63C2000B35DB4 /* CustomStockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476C126E63C2000B35DB4 /* CustomStockListViewController.swift */; };
+		43C476C626E63EC000B35DB4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476C526E63EC000B35DB4 /* NetworkService.swift */; };
+		43C476CB26E6408600B35DB4 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476CA26E6408600B35DB4 /* Resource.swift */; };
+		43C476CE26E643CD00B35DB4 /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476CD26E643CD00B35DB4 /* StockService.swift */; };
+		43C476D126E6440500B35DB4 /* Resource+Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476D026E6440500B35DB4 /* Resource+Stock.swift */; };
+		43C476D326E6445D00B35DB4 /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476D226E6445D00B35DB4 /* StockItem.swift */; };
+		43C476D526E64C5B00B35DB4 /* StockMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476D426E64C5B00B35DB4 /* StockMarket.swift */; };
+		43C476D726E64CC100B35DB4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476D626E64CC100B35DB4 /* APIConstants.swift */; };
+		43C476DB26E657BB00B35DB4 /* StockMarketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476DA26E657BB00B35DB4 /* StockMarketListViewModel.swift */; };
+		43C476E126E65A7C00B35DB4 /* StockMarketListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476DF26E65A7C00B35DB4 /* StockMarketListCell.swift */; };
+		43C476E226E65A7C00B35DB4 /* StockMarketListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C476E026E65A7C00B35DB4 /* StockMarketListCell.xib */; };
+		43C476E526E6612500B35DB4 /* CustomDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476E426E6612500B35DB4 /* CustomDataService.swift */; };
+		43C476E826E6615100B35DB4 /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476E726E6615100B35DB4 /* LocalDataService.swift */; };
+		43C476EA26E664C700B35DB4 /* StockMarketListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476E926E664C700B35DB4 /* StockMarketListCellViewModel.swift */; };
+		43C476ED26E668F900B35DB4 /* StockMarket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C476EC26E668F900B35DB4 /* StockMarket.storyboard */; };
+		43C476EF26E6692400B35DB4 /* CustomStockList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C476EE26E6692400B35DB4 /* CustomStockList.storyboard */; };
+		43C476F326E684B300B35DB4 /* MultiTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476F226E684B300B35DB4 /* MultiTableView.swift */; };
+		43C476F726E69BE400B35DB4 /* LeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476F526E69BE400B35DB4 /* LeftTableViewCell.swift */; };
+		43C476F826E69BE400B35DB4 /* LeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C476F626E69BE400B35DB4 /* LeftTableViewCell.xib */; };
+		43C476FB26E69BF300B35DB4 /* RightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476F926E69BF300B35DB4 /* RightTableViewCell.swift */; };
+		43C476FC26E69BF300B35DB4 /* RightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C476FA26E69BF300B35DB4 /* RightTableViewCell.xib */; };
+		43C476FF26E70D5500B35DB4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C476FE26E70D5500B35DB4 /* MainTabBarController.swift */; };
+		43C4770126E70E0A00B35DB4 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4770026E70E0A00B35DB4 /* MainTabBarViewModel.swift */; };
+		43C4770426E70FC000B35DB4 /* CustomStockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4770326E70FC000B35DB4 /* CustomStockListViewModel.swift */; };
+		43C4770626E7238F00B35DB4 /* PriceUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4770526E7238F00B35DB4 /* PriceUpdateService.swift */; };
+		43C4770826E73E2500B35DB4 /* CustomStockListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4770726E73E2500B35DB4 /* CustomStockListCellViewModel.swift */; };
+		43C4770A26E73F7B00B35DB4 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4770926E73F7B00B35DB4 /* DateExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		43C476A426E6373800B35DB4 /* StockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43C476A726E6373800B35DB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43C476A926E6373800B35DB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		43C476AE26E6373800B35DB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43C476B026E6373800B35DB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43C476B326E6373800B35DB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43C476B526E6373800B35DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43C476BD26E63BE700B35DB4 /* StockMarketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarketListViewController.swift; sourceTree = "<group>"; };
+		43C476C126E63C2000B35DB4 /* CustomStockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStockListViewController.swift; sourceTree = "<group>"; };
+		43C476C526E63EC000B35DB4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		43C476CA26E6408600B35DB4 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		43C476CD26E643CD00B35DB4 /* StockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockService.swift; sourceTree = "<group>"; };
+		43C476D026E6440500B35DB4 /* Resource+Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Stock.swift"; sourceTree = "<group>"; };
+		43C476D226E6445D00B35DB4 /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
+		43C476D426E64C5B00B35DB4 /* StockMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarket.swift; sourceTree = "<group>"; };
+		43C476D626E64CC100B35DB4 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		43C476DA26E657BB00B35DB4 /* StockMarketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarketListViewModel.swift; sourceTree = "<group>"; };
+		43C476DF26E65A7C00B35DB4 /* StockMarketListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarketListCell.swift; sourceTree = "<group>"; };
+		43C476E026E65A7C00B35DB4 /* StockMarketListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockMarketListCell.xib; sourceTree = "<group>"; };
+		43C476E426E6612500B35DB4 /* CustomDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataService.swift; sourceTree = "<group>"; };
+		43C476E726E6615100B35DB4 /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
+		43C476E926E664C700B35DB4 /* StockMarketListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarketListCellViewModel.swift; sourceTree = "<group>"; };
+		43C476EC26E668F900B35DB4 /* StockMarket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StockMarket.storyboard; sourceTree = "<group>"; };
+		43C476EE26E6692400B35DB4 /* CustomStockList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomStockList.storyboard; sourceTree = "<group>"; };
+		43C476F226E684B300B35DB4 /* MultiTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTableView.swift; sourceTree = "<group>"; };
+		43C476F526E69BE400B35DB4 /* LeftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTableViewCell.swift; sourceTree = "<group>"; };
+		43C476F626E69BE400B35DB4 /* LeftTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftTableViewCell.xib; sourceTree = "<group>"; };
+		43C476F926E69BF300B35DB4 /* RightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTableViewCell.swift; sourceTree = "<group>"; };
+		43C476FA26E69BF300B35DB4 /* RightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightTableViewCell.xib; sourceTree = "<group>"; };
+		43C476FE26E70D5500B35DB4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		43C4770026E70E0A00B35DB4 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
+		43C4770326E70FC000B35DB4 /* CustomStockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStockListViewModel.swift; sourceTree = "<group>"; };
+		43C4770526E7238F00B35DB4 /* PriceUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceUpdateService.swift; sourceTree = "<group>"; };
+		43C4770726E73E2500B35DB4 /* CustomStockListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStockListCellViewModel.swift; sourceTree = "<group>"; };
+		43C4770926E73F7B00B35DB4 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43C476A126E6373800B35DB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43C4769B26E6373800B35DB4 = {
+			isa = PBXGroup;
+			children = (
+				43C476A626E6373800B35DB4 /* StockDemo */,
+				43C476A526E6373800B35DB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43C476A526E6373800B35DB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43C476A426E6373800B35DB4 /* StockDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43C476A626E6373800B35DB4 /* StockDemo */ = {
+			isa = PBXGroup;
+			children = (
+				43C476A726E6373800B35DB4 /* AppDelegate.swift */,
+				43C476A926E6373800B35DB4 /* SceneDelegate.swift */,
+				43C476C726E63ECA00B35DB4 /* Entities */,
+				43C476F026E6845600B35DB4 /* ViewComponents */,
+				43C476BB26E63B7500B35DB4 /* Service */,
+				43C476CC26E643BD00B35DB4 /* Helper */,
+				43C476BC26E63BCE00B35DB4 /* Screens */,
+				43C476C326E63C2900B35DB4 /* Resources */,
+			);
+			path = StockDemo;
+			sourceTree = "<group>";
+		};
+		43C476BB26E63B7500B35DB4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				43C476E326E660F600B35DB4 /* CustomData */,
+				43C476CF26E643ED00B35DB4 /* Stock */,
+				43C4770526E7238F00B35DB4 /* PriceUpdateService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		43C476BC26E63BCE00B35DB4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				43C476FD26E70D3E00B35DB4 /* MainTabBar */,
+				43C476BF26E63BEB00B35DB4 /* StockMarket */,
+				43C476C026E63BF100B35DB4 /* CustomStockList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		43C476BF26E63BEB00B35DB4 /* StockMarket */ = {
+			isa = PBXGroup;
+			children = (
+				43C476EB26E666A600B35DB4 /* ViewModel */,
+				43C476DC26E657C000B35DB4 /* View */,
+			);
+			path = StockMarket;
+			sourceTree = "<group>";
+		};
+		43C476C026E63BF100B35DB4 /* CustomStockList */ = {
+			isa = PBXGroup;
+			children = (
+				43C4770226E70FAF00B35DB4 /* ViewModel */,
+				43C476DD26E657C600B35DB4 /* View */,
+			);
+			path = CustomStockList;
+			sourceTree = "<group>";
+		};
+		43C476C326E63C2900B35DB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43C476B026E6373800B35DB4 /* Assets.xcassets */,
+				43C476B226E6373800B35DB4 /* LaunchScreen.storyboard */,
+				43C476B526E6373800B35DB4 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		43C476C426E63EB100B35DB4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				43C476CA26E6408600B35DB4 /* Resource.swift */,
+				43C476D626E64CC100B35DB4 /* APIConstants.swift */,
+				43C476C526E63EC000B35DB4 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		43C476C726E63ECA00B35DB4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				43C476D426E64C5B00B35DB4 /* StockMarket.swift */,
+				43C476D226E6445D00B35DB4 /* StockItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		43C476CC26E643BD00B35DB4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				43C476E626E6613E00B35DB4 /* LocalData */,
+				43C476C426E63EB100B35DB4 /* Network */,
+				43C4770926E73F7B00B35DB4 /* DateExtension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		43C476CF26E643ED00B35DB4 /* Stock */ = {
+			isa = PBXGroup;
+			children = (
+				43C476CD26E643CD00B35DB4 /* StockService.swift */,
+				43C476D026E6440500B35DB4 /* Resource+Stock.swift */,
+			);
+			path = Stock;
+			sourceTree = "<group>";
+		};
+		43C476DC26E657C000B35DB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43C476DE26E65A6500B35DB4 /* Cell */,
+				43C476BD26E63BE700B35DB4 /* StockMarketListViewController.swift */,
+				43C476EC26E668F900B35DB4 /* StockMarket.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43C476DD26E657C600B35DB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43C476C126E63C2000B35DB4 /* CustomStockListViewController.swift */,
+				43C476EE26E6692400B35DB4 /* CustomStockList.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43C476DE26E65A6500B35DB4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43C476DF26E65A7C00B35DB4 /* StockMarketListCell.swift */,
+				43C476E026E65A7C00B35DB4 /* StockMarketListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		43C476E326E660F600B35DB4 /* CustomData */ = {
+			isa = PBXGroup;
+			children = (
+				43C476E426E6612500B35DB4 /* CustomDataService.swift */,
+			);
+			path = CustomData;
+			sourceTree = "<group>";
+		};
+		43C476E626E6613E00B35DB4 /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				43C476E726E6615100B35DB4 /* LocalDataService.swift */,
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
+		43C476EB26E666A600B35DB4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				43C476DA26E657BB00B35DB4 /* StockMarketListViewModel.swift */,
+				43C476E926E664C700B35DB4 /* StockMarketListCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		43C476F026E6845600B35DB4 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				43C476F126E6846300B35DB4 /* MultiTableView */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		43C476F126E6846300B35DB4 /* MultiTableView */ = {
+			isa = PBXGroup;
+			children = (
+				43C476F426E69BCD00B35DB4 /* Cell */,
+				43C476F226E684B300B35DB4 /* MultiTableView.swift */,
+			);
+			path = MultiTableView;
+			sourceTree = "<group>";
+		};
+		43C476F426E69BCD00B35DB4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43C476F526E69BE400B35DB4 /* LeftTableViewCell.swift */,
+				43C476F626E69BE400B35DB4 /* LeftTableViewCell.xib */,
+				43C476F926E69BF300B35DB4 /* RightTableViewCell.swift */,
+				43C476FA26E69BF300B35DB4 /* RightTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		43C476FD26E70D3E00B35DB4 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				43C4770026E70E0A00B35DB4 /* MainTabBarViewModel.swift */,
+				43C476FE26E70D5500B35DB4 /* MainTabBarController.swift */,
+				43C476AD26E6373800B35DB4 /* Main.storyboard */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		43C4770226E70FAF00B35DB4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				43C4770326E70FC000B35DB4 /* CustomStockListViewModel.swift */,
+				43C4770726E73E2500B35DB4 /* CustomStockListCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43C476A326E6373800B35DB4 /* StockDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43C476B826E6373800B35DB4 /* Build configuration list for PBXNativeTarget "StockDemo" */;
+			buildPhases = (
+				43C476A026E6373800B35DB4 /* Sources */,
+				43C476A126E6373800B35DB4 /* Frameworks */,
+				43C476A226E6373800B35DB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StockDemo;
+			productName = StockDemo;
+			productReference = 43C476A426E6373800B35DB4 /* StockDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43C4769C26E6373800B35DB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					43C476A326E6373800B35DB4 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 43C4769F26E6373800B35DB4 /* Build configuration list for PBXProject "StockDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43C4769B26E6373800B35DB4;
+			productRefGroup = 43C476A526E6373800B35DB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43C476A326E6373800B35DB4 /* StockDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43C476A226E6373800B35DB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43C476FC26E69BF300B35DB4 /* RightTableViewCell.xib in Resources */,
+				43C476E226E65A7C00B35DB4 /* StockMarketListCell.xib in Resources */,
+				43C476B426E6373800B35DB4 /* LaunchScreen.storyboard in Resources */,
+				43C476ED26E668F900B35DB4 /* StockMarket.storyboard in Resources */,
+				43C476B126E6373800B35DB4 /* Assets.xcassets in Resources */,
+				43C476F826E69BE400B35DB4 /* LeftTableViewCell.xib in Resources */,
+				43C476EF26E6692400B35DB4 /* CustomStockList.storyboard in Resources */,
+				43C476AF26E6373800B35DB4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43C476A026E6373800B35DB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43C476C626E63EC000B35DB4 /* NetworkService.swift in Sources */,
+				43C476EA26E664C700B35DB4 /* StockMarketListCellViewModel.swift in Sources */,
+				43C476FF26E70D5500B35DB4 /* MainTabBarController.swift in Sources */,
+				43C4770626E7238F00B35DB4 /* PriceUpdateService.swift in Sources */,
+				43C476D726E64CC100B35DB4 /* APIConstants.swift in Sources */,
+				43C476C226E63C2000B35DB4 /* CustomStockListViewController.swift in Sources */,
+				43C476F726E69BE400B35DB4 /* LeftTableViewCell.swift in Sources */,
+				43C476E126E65A7C00B35DB4 /* StockMarketListCell.swift in Sources */,
+				43C476F326E684B300B35DB4 /* MultiTableView.swift in Sources */,
+				43C476A826E6373800B35DB4 /* AppDelegate.swift in Sources */,
+				43C476FB26E69BF300B35DB4 /* RightTableViewCell.swift in Sources */,
+				43C4770A26E73F7B00B35DB4 /* DateExtension.swift in Sources */,
+				43C476CE26E643CD00B35DB4 /* StockService.swift in Sources */,
+				43C476E526E6612500B35DB4 /* CustomDataService.swift in Sources */,
+				43C4770426E70FC000B35DB4 /* CustomStockListViewModel.swift in Sources */,
+				43C4770126E70E0A00B35DB4 /* MainTabBarViewModel.swift in Sources */,
+				43C476E826E6615100B35DB4 /* LocalDataService.swift in Sources */,
+				43C476DB26E657BB00B35DB4 /* StockMarketListViewModel.swift in Sources */,
+				43C476CB26E6408600B35DB4 /* Resource.swift in Sources */,
+				43C476D326E6445D00B35DB4 /* StockItem.swift in Sources */,
+				43C476D526E64C5B00B35DB4 /* StockMarket.swift in Sources */,
+				43C4770826E73E2500B35DB4 /* CustomStockListCellViewModel.swift in Sources */,
+				43C476BE26E63BE700B35DB4 /* StockMarketListViewController.swift in Sources */,
+				43C476D126E6440500B35DB4 /* Resource+Stock.swift in Sources */,
+				43C476AA26E6373800B35DB4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		43C476AD26E6373800B35DB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43C476AE26E6373800B35DB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43C476B226E6373800B35DB4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43C476B326E6373800B35DB4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43C476B626E6373800B35DB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		43C476B726E6373800B35DB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43C476B926E6373800B35DB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SW53M35L7P;
+				INFOPLIST_FILE = StockDemo/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dchao.StockDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43C476BA26E6373800B35DB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SW53M35L7P;
+				INFOPLIST_FILE = StockDemo/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dchao.StockDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43C4769F26E6373800B35DB4 /* Build configuration list for PBXProject "StockDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43C476B626E6373800B35DB4 /* Debug */,
+				43C476B726E6373800B35DB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43C476B826E6373800B35DB4 /* Build configuration list for PBXNativeTarget "StockDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43C476B926E6373800B35DB4 /* Debug */,
+				43C476BA26E6373800B35DB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43C4769C26E6373800B35DB4 /* Project object */;
+}

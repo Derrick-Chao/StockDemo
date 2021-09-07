@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="30W-Tk-Qbl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--自選清單-->
+        <scene sceneID="Tpu-kK-zEV">
+            <objects>
+                <viewController storyboardIdentifier="CustomStockListViewController" id="AOd-Cv-xrh" customClass="CustomStockListViewController" customModule="StockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q2u-Zf-ozm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="piq-Jl-Q9u"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="自選清單" id="2zl-jg-2qQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bB-xt-MXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117" y="65"/>
+        </scene>
+        <!--股票清單-->
+        <scene sceneID="cNC-Rd-Bz8">
+            <objects>
+                <viewController storyboardIdentifier="StockMarketListViewController" id="mi9-qg-10h" customClass="StockMarketListViewController" customModule="StockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OXe-Ar-TuR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yOe-oo-xUq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XTk-Ae-FmK"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XTk-Ae-FmK" firstAttribute="trailing" secondItem="yOe-oo-xUq" secondAttribute="trailing" id="GLE-dA-l2V"/>
+                            <constraint firstItem="yOe-oo-xUq" firstAttribute="leading" secondItem="XTk-Ae-FmK" secondAttribute="leading" id="ZMK-IG-RlO"/>
+                            <constraint firstItem="yOe-oo-xUq" firstAttribute="top" secondItem="XTk-Ae-FmK" secondAttribute="top" id="iep-9V-QUP"/>
+                            <constraint firstItem="XTk-Ae-FmK" firstAttribute="bottom" secondItem="yOe-oo-xUq" secondAttribute="bottom" id="jFl-23-E3k"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="股票清單" id="fo9-Py-neg"/>
+                    <connections>
+                        <outlet property="listTableView" destination="yOe-oo-xUq" id="2Q8-E6-aTN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FA3-Rf-FgX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1397" y="65"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="anU-Be-D4Z">
+            <objects>
+                <tabBarController id="30W-Tk-Qbl" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ebI-Yn-9QG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mi9-qg-10h" kind="relationship" relationship="viewControllers" id="LjT-1J-djy"/>
+                        <segue destination="AOd-Cv-xrh" kind="relationship" relationship="viewControllers" id="dmM-yZ-UCU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8x5-cz-je3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-784" y="-676"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
