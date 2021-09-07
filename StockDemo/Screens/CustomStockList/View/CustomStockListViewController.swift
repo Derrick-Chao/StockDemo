@@ -27,6 +27,7 @@ class CustomStockListViewController: UIViewController, MultiTableViewDataSource 
         viewModel.updateClosure = { [weak self] in
             guard let self = self else { return }
             
+            print("updateClosure")
             self.multiTableView.reloadData()
         }
     }

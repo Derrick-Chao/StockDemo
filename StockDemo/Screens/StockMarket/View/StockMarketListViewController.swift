@@ -116,7 +116,13 @@ class StockMarketListViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func dismissSettingView() {
-         
+        
+        if currentTimeValue != newTimeValue {
+            // 沒按確認鍵，則設定回上一次的值
+            updateTimeTextField.text = String(format: "%d", currentTimeValue)
+            newTimeValue = currentTimeValue
+        }
+        
         updateTimeTextField.resignFirstResponder()
         UIView.animate(withDuration: 0.3) {
             self.settingView.alpha = 0.0

@@ -115,9 +115,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4P-UI-tBp">
-                                    <rect key="frame" x="77" y="63" width="75" height="30"/>
+                                    <rect key="frame" x="64.5" y="63" width="100" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="75" id="aEr-Hh-UT9"/>
+                                        <constraint firstAttribute="height" constant="40" id="R89-Lg-E4B"/>
+                                        <constraint firstAttribute="width" constant="100" id="aEr-Hh-UT9"/>
                                     </constraints>
                                     <state key="normal" title="確認">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
