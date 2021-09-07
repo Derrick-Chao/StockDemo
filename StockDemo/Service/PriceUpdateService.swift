@@ -65,6 +65,10 @@ class PriceUpdateService {
         }
         let randomDelay = Double.random(in: 0.0...0.35)
         timer.fireDate = Date(timeIntervalSinceNow: randomDelay)
+        if let oldTimer = timeDict[index] {
+            oldTimer.invalidate()
+            timeDict[index] = nil
+        }
         timeDict[index] = timer
         RunLoop.current.add(timer, forMode: .common)
         return timer
@@ -123,7 +127,7 @@ class PriceUpdateService {
         let changeRateValue = changePriceValue / closingPriceValue
         let changeRate = String(format: "%.2f%%", changeRateValue * 100.0)
         let updateTime = Date().getCurrentDateString(format: "hh:mm:ss")
-        
+        print("index: \(index), updateTime: \(updateTime)")
         var color: UIColor = .white
         if newPriceValue == closingPriceValue {
             color = .white
