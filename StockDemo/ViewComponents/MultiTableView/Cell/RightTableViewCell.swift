@@ -55,28 +55,36 @@ class RightTableViewCell: UITableViewCell {
     // MARK:- Public methods
     func bindToData(viewModel: CustomStockListCellViewModel) {
         
+        updateIndicatorLineView.backgroundColor = viewModel.displayColor
+        updateIndicatorLineView.alpha = 1.0
         dealedPriceLabel.text = viewModel.closingPrice
         dealedPriceLabel.textColor = viewModel.displayColor
-        
+
         changedPriceLabel.textColor = viewModel.displayColor
         changedPriceLabel.text = viewModel.changePrice
-        
+
         changedRateLabel.textColor = viewModel.displayColor
         changedRateLabel.text = viewModel.changeRate
-        
+
         updateTimeLabel.textColor = viewModel.displayColor
         updateTimeLabel.text = viewModel.updateTime
-    }
-    
-    func showUpdate(backgroundColor: UIColor) {
         
-        updateIndicatorLineView.backgroundColor = backgroundColor
-        UIView.animate(withDuration: 0.3) {
-            self.updateIndicatorLineView.alpha = 1.0
-        } completion: { _ in
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut) {
             self.updateIndicatorLineView.alpha = 0.0
+        } completion: { _ in
+            
         }
     }
+    
+//    func showUpdate(backgroundColor: UIColor) {
+//
+//        updateIndicatorLineView.backgroundColor = backgroundColor
+//        UIView.animate(withDuration: 0.1) {
+//            self.updateIndicatorLineView.alpha = 1.0
+//        } completion: { _ in
+//            self.updateIndicatorLineView.alpha = 0.0
+//        }
+//    }
     
     // MARK:- Private methods
     

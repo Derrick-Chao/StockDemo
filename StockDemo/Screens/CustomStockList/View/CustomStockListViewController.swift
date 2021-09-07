@@ -83,7 +83,7 @@ class CustomStockListViewController: UIViewController, MultiTableViewDataSource 
 //                print("createTimer completion: \(index), \(priceResult)")
                 if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? RightTableViewCell {
                     
-                    cell.showUpdate(backgroundColor: priceResult.displayColor)
+//                    cell.showUpdate(backgroundColor: priceResult.displayColor)
                     cell.bindToData(viewModel: newCellViewModel)
                 }
             })
