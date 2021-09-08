@@ -29,7 +29,6 @@ class StockMarketListCellViewModel {
 struct StockMarketListCellViewModelBuilder {
     static func buildViewModel(stockItems: [StockItem]) -> [StockMarketListCellViewModel] {
         
-        
         let viewModels = stockItems.map { item -> StockMarketListCellViewModel in
             
             let isSelected = CustomDataService.defaultSevice.getAllSavedStockItemIds().contains(item.id)

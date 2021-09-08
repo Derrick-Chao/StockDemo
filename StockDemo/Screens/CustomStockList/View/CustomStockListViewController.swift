@@ -75,8 +75,8 @@ class CustomStockListViewController: UIViewController, MultiTableViewDataSource 
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "RightTableViewCell", for: indexPath) as! RightTableViewCell
             cell.bindToData(viewModel: cellViewModel)
-            cell.timer = viewModel.priceUpdateService.createTimer(index: indexPath.row, completion: { [weak self, tableView] index, priceResult in
-                guard let self = self else { return }
+            cell.timer = viewModel.priceUpdateService.createTimer(index: indexPath.row, completion: { [weak self, tableView] index, shouldUpdate, priceResult in
+                guard let self = self, shouldUpdate else { return }
                 
                 let newCellViewModel = self.viewModel.cellViewModels[indexPath.row]
                 newCellViewModel.updateValue(priceResult)

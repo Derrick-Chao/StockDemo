@@ -16,6 +16,7 @@ class CustomStockListViewModel {
     // MARK:- Private property
     private let customDataService = CustomDataService.defaultSevice
     private var stockMarket: StockMarket?
+    private var allStockItems: [StockItem] = []
     private var saveStockItems: [StockItem] = []
     
     // MARK:- Initialization
@@ -26,32 +27,8 @@ class CustomStockListViewModel {
             
             self.updateClosure?()
         }
-        
-        customDataService.itemStateDidChangeClosure = { [weak self] isSaved, stockId in
-            guard let self = self else { return }
-            /*
-             在股票清單Tab頁面，有發生 新增/移除 商品的動作時
-             在這邊做處理來單一新增或移除使用者所選擇的商品資料
-             */
-            if isSaved, let stockItems = self.stockMarket?.stockItems {
-                
-                if let stockItem = stockItems.first(where: { $0.id == stockId }) {
-                    
-                    self.saveStockItems.append(stockItem)
-                    let cellViewModel = self.buildViewModel(stockItem: stockItem)
-                    self.cellViewModels.append(cellViewModel)
-                }
-            } else {
-                
-                if let index = self.saveStockItems.firstIndex(where: { $0.id == stockId }) {
-                    
-                    self.saveStockItems.remove(at: index)
-                    self.cellViewModels.remove(at: index)
-                }
-            }
-            // 也須更新 PriceUpdateService 的資料
-            self.priceUpdateService.updateStockItems(self.saveStockItems)
-        }
+        self.handleSingleItemSaveStateChanged()
+        self.handleMultipleItemsSaveStateChanged()
     }
     
     // MARK:- Public methods
@@ -59,6 +36,7 @@ class CustomStockListViewModel {
     func setStockMarket(_ stockMarket: StockMarket) {
         
         self.stockMarket = stockMarket
+        self.allStockItems = stockMarket.stockItems
         parsingSavedStockItems(items: stockMarket.stockItems)
         priceUpdateService.updateStockItems(saveStockItems)
         cellViewModels = buildViewModels(items: saveStockItems)
@@ -78,6 +56,62 @@ class CustomStockListViewModel {
             if let item = items.filter( { $0.id == id} ).first {
                 saveStockItems.append(item)
             }
+        }
+    }
+    
+    private func handleSingleItemSaveStateChanged() {
+        
+        customDataService.singleItemDidChangeClosure = { [weak self] isSaved, stockId in
+            guard let self = self else { return }
+            /*
+             在股票清單Tab頁面，有發生 新增/移除 商品的動作時
+             在這邊做處理來單一新增或移除使用者所選擇的商品資料
+             */
+            if isSaved {
+                
+                if let stockItem = self.allStockItems.first(where: { $0.id == stockId }) {
+                    
+                    self.saveStockItems.append(stockItem)
+                    let cellViewModel = self.buildViewModel(stockItem: stockItem)
+                    self.cellViewModels.append(cellViewModel)
+                }
+            } else {
+                
+                if let index = self.saveStockItems.firstIndex(where: { $0.id == stockId }) {
+                    
+                    self.saveStockItems.remove(at: index)
+                    self.cellViewModels.remove(at: index)
+                }
+            }
+            // 也須更新 PriceUpdateService 的資料
+            self.priceUpdateService.updateStockItems(self.saveStockItems)
+        }
+    }
+    
+    private func handleMultipleItemsSaveStateChanged() {
+        
+        customDataService.batchOfItemsDidChangeClosure = { [weak self] isSaved, stockIds in
+            guard let self = self else { return }
+            /*
+             在股票清單Tab頁面，有發生 全選/取消全選 商品的動作時
+             在這邊做處理來多個商品新增或移除使用者所選擇的商品資料
+             */
+            if isSaved {
+                
+                for stockId in stockIds {
+                    if let stockItem = self.allStockItems.first(where: { $0.id == stockId }) {
+                        
+                        self.saveStockItems.append(stockItem)
+                        let cellViewModel = self.buildViewModel(stockItem: stockItem)
+                        self.cellViewModels.append(cellViewModel)
+                    }
+                }
+            } else {
+                self.saveStockItems.removeAll()
+                self.cellViewModels.removeAll()
+            }
+            // 也須更新 PriceUpdateService 的資料
+            self.priceUpdateService.updateStockItems(self.saveStockItems)
         }
     }
     

@@ -87,11 +87,11 @@ class StockMarketListViewController: UIViewController, UITextFieldDelegate {
     
     // MARK:- Actions
     @IBAction func selectAllButtonPressed(_ sender: UIButton) {
-    
+        viewModel.selectAllItems()
     }
     
     @IBAction func deselectAllButtonPressed(_ sender: UIButton) {
-    
+        viewModel.deselectAllItems()
     }
     
     @IBAction func settingButtonPressed(_ sender: UIButton) {

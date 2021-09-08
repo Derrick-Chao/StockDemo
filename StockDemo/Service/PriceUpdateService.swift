@@ -55,13 +55,15 @@ class PriceUpdateService {
         updateClosure?()
     }
     
-    func createTimer(index: Int, completion: @escaping (_ index: Int, _ result: PriceResult) -> ()) -> Timer {
+    func createTimer(index: Int, completion: @escaping (_ index: Int, _ shouldUpdate: Bool, _ result: PriceResult) -> ()) -> Timer {
         
         let timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true) { [weak self, index] timer in
             guard let self = self else { return }
             
             let priceResult = self.updatePrice(index)
-            completion(index, priceResult)
+            let shouldUpdateValue = (Int.random(in: 0...1) == 1)
+            print("index: \(index), shouldUpdateValue: \(shouldUpdateValue)")
+            completion(index, shouldUpdateValue, priceResult)
         }
         let randomDelay = Double.random(in: 0.0...0.35)
         timer.fireDate = Date(timeIntervalSinceNow: randomDelay)
@@ -127,7 +129,7 @@ class PriceUpdateService {
         let changeRateValue = changePriceValue / closingPriceValue
         let changeRate = String(format: "%.2f%%", changeRateValue * 100.0)
         let updateTime = Date().getCurrentDateString(format: "hh:mm:ss")
-        print("index: \(index), updateTime: \(updateTime)")
+//        print("index: \(index), updateTime: \(updateTime)")
         var color: UIColor = .white
         if newPriceValue == closingPriceValue {
             color = .white

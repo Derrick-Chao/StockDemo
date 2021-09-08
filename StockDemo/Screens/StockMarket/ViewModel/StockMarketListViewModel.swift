@@ -26,6 +26,8 @@ class StockMarketListViewModel {
     private let stockService = StockService()
     private let customDataService = CustomDataService.defaultSevice
     private var stockMarket: StockMarket?
+    private var allStockItems: [StockItem] = []
+    private var isSelectedAll = false
     
     // MARK:- Initialization
     init() {
@@ -33,28 +35,10 @@ class StockMarketListViewModel {
     }
     
     // MARK:- Public methods
-    func fetchStocks(completion: @escaping (_ result: StockMarketListState) -> ()) {
-        
-        stockService.fetchAllStocks { [weak self] result in
-            guard let self = self else {
-                completion(.failure(StockMarketListError.objectDeallocated))
-                return
-            }
-            
-            switch result {
-            case .success(let stockMarket):
-                self.stockMarket = stockMarket
-                self.buildViewModels(stockMarket.stockItems)
-                completion(.success)
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
     func setStockMarket(_ stockMarket: StockMarket) {
         
         self.stockMarket = stockMarket
+        self.allStockItems = stockMarket.stockItems
         buildViewModels(stockMarket.stockItems)
         updateClosure?()
     }
@@ -63,6 +47,40 @@ class StockMarketListViewModel {
         guard let stockMarket = self.stockMarket else { return nil }
         
         return stockMarket.stockItems[index]
+    }
+    
+    func selectAllItems() {
+        guard !isSelectedAll else { return }
+        
+        isSelectedAll = true
+        for cellViewModel in cellViewModels {
+            cellViewModel.isSelected = true
+        }
+        
+        var newStockIds = allStockItems.map { $0.id }
+        let savedIds = customDataService.getAllSavedStockItemIds()
+        print("newStockIds count: \(newStockIds.count), savedIds: \(savedIds.count)")
+        if !savedIds.isEmpty {
+            
+            for stockId in savedIds {
+                if let index = newStockIds.firstIndex(of: stockId) {
+                    newStockIds.remove(at: index)
+                }
+            }
+        }
+        print("newStockIds count: \(newStockIds.count)")
+        customDataService.saveMultipleStockItems(ids: newStockIds)
+        updateClosure?()
+    }
+    
+    func deselectAllItems() {
+        
+        isSelectedAll = false
+        for cellViewModel in cellViewModels {
+            cellViewModel.isSelected = false
+        }
+        customDataService.removeAllStockItemIds()
+        updateClosure?()
     }
     
     func toggleStockItemSaveState(index: Int) -> StockMarketListCellViewModel {
@@ -74,7 +92,6 @@ class StockMarketListViewModel {
         } else {
             customDataService.removeStockItem(id: cellViewModel.id)
         }
-                
         return cellViewModel
     }
     
@@ -82,6 +99,8 @@ class StockMarketListViewModel {
     private func buildViewModels(_ items: [StockItem]) {
         
         let cellViewModels = StockMarketListCellViewModelBuilder.buildViewModel(stockItems: items)
+        let savedCount = cellViewModels.filter { $0.isSelected == true }.count
+        isSelectedAll = (savedCount == items.count)
         self.cellViewModels = cellViewModels
     }
 }
